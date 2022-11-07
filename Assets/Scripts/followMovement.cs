@@ -7,6 +7,9 @@ public class followMovement : MonoBehaviour
     public GameObject character;
     public Vector3 origPos, targetPos;
     public float timer = 0.25f;
+    public movement mainPlayer;
+    public Animator animator;
+    public bool up, down, left, right;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +21,27 @@ public class followMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (character.GetComponent<movement>().isMoving)
-        {
-            Vector3 target = character.GetComponent<movement>().origPos;
-            StartCoroutine(follow(target));
+        animator.SetBool("up", up);
+        animator.SetBool("down", down);
+        animator.SetBool("left", left);
+        animator.SetBool("right", right);
+        if (mainPlayer.isMoving){
+            Vector3 direction = Vector3.Normalize(targetPos - origPos);
+            if (direction == Vector3.up){
+                up = true;
+            } else if (direction == Vector3.down){
+                down = true;
+            } else if (direction == Vector3.left){
+                left = true;
+            } else if (direction == Vector3.right){
+                right = true;
+            }
+        } else {
+            up = false;
+            down = false;
+            left = false;
+            right = false;
         }
-        */
     }
 
     public void startFollowing()
