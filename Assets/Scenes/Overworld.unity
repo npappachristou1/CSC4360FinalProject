@@ -19566,5 +19566,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Party
       objectReference: {fileID: 0}
+    - target: {fileID: 8703061376633842050, guid: 2c7e6f552419a4645b57994287e91002, type: 3}
+      propertyPath: locationName
+      value: Overworld
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7e6f552419a4645b57994287e91002, type: 3}

@@ -14,8 +14,7 @@ public class followMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        origPos = transform.position;
-        targetPos = character.transform.position;
+        
     }
 
     // Update is called once per frame
