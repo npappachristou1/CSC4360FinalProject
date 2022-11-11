@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChangeScreens : MonoBehaviour
 {
     public movement mainPlayer;
+    public string locationName;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,10 @@ public class ChangeScreens : MonoBehaviour
     {
         if (mainPlayer.isMoving == false)
         {
-            Debug.Log("Current Zone: " + zoneName);
+            Location.menuLocationName = locationName;
+            Location.menuLocationGrid = mainPlayer.targetPos;
+            Location.menuOn = true;
+            Debug.Log("Menu accessesed from: " + Location.menuLocationName + " " + Location.menuLocationGrid);
             changeScene("menu");
         }
 
@@ -62,7 +66,7 @@ public class ChangeScreens : MonoBehaviour
     void changeScene(string sceneName)
     {
         Vector3 location = mainPlayer.targetPos;
-        
+        Debug.Log(Location.menuLocationName);
         SceneManager.LoadScene(sceneName);
     }
 }
