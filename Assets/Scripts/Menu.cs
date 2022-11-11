@@ -20,6 +20,6 @@ public class Menu : MonoBehaviour
 
     public void closeMenu()
     {
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadScene(Location.menuLocationName);
     }
 }
