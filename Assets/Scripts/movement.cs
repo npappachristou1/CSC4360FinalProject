@@ -16,6 +16,11 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Location.menuOn){
+            Location.menuOn = false;
+            transform.position = Location.menuLocationGrid;
+            partyMember.transform.position = transform.position;
+        }
         origPos = transform.position;
         partyMemberScript = partyMember.GetComponent<followMovement>();
     }
@@ -76,6 +81,7 @@ public class movement : MonoBehaviour
         float timePassed = 0;
         origPos = transform.position;
         targetPos = origPos + (direction * 0.32f);
+        partyMemberScript.resetMove();
         origPos1 = partyMemberScript.origPos;
         targetPos1 = partyMemberScript.targetPos;
 
