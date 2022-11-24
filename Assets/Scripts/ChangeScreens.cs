@@ -60,6 +60,22 @@ public class ChangeScreens : MonoBehaviour
         else if (tile.tag == "Battle")
         {
             Debug.Log("Chance of battle occuring");
+
+            int chance = Random.Range(0, 100);
+            if (chance <= 10){
+                BattleInfo.zoneName = locationName;
+                BattleInfo.isBoss = false;
+                BattleInfo.enemiesTotal = 2;
+                BattleInfo.enemiesLvl = 2;
+                changeScene("Battle");
+            }
+            
+        } else if (tile.tag == "BossBattle"){
+            BattleInfo.zoneName = locationName;
+            BattleInfo.isBoss = true;
+            BattleInfo.enemiesTotal = 1;
+            BattleInfo.enemiesLvl = 5;
+            changeScene("Battle");
         }
     }
 
