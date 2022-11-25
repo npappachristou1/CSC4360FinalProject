@@ -19562,6 +19562,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e6d3369937d12184184f6bcb8a28e649, type: 2}
+    - target: {fileID: 5788380398483547438, guid: 2c7e6f552419a4645b57994287e91002, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 54cbb712ea809e649a7dafb8a7244015, type: 3}
     - target: {fileID: 7617716298923942319, guid: 2c7e6f552419a4645b57994287e91002, type: 3}
       propertyPath: m_Name
       value: Party
