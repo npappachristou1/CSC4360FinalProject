@@ -10,6 +10,7 @@ public class Battle : MonoBehaviour
     int enemiesLvl;
     StatSheet player1;
     StatSheet player2;
+    Actions[] allActions;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Battle : MonoBehaviour
 
         player1 = Party.player1;
         player2 = Party.player2;
+        allActions = Party.allActions;
     }
 
     // Update is called once per frame
