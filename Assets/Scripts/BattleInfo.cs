@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BattleInfo
 {
-    public static string zoneName = "";
+    public static string zoneName = "Boss Zone";
     public static bool isBoss = false;
-    public static int enemiesTotal = 1;
+    public static int enemiesTotal = 3;
     public static int enemiesLvl = 1;
 }
