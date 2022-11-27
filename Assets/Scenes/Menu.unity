@@ -2537,6 +2537,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e407d26c3874ac4c91f82d4ce0822b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warriorHp: {fileID: 246548940}
+  warriorMp: {fileID: 1001851666}
+  warriorStrength: {fileID: 994761242}
+  warriorMagic: {fileID: 2111216084}
+  warriorDefense: {fileID: 2006181832}
+  mageHp: {fileID: 3199899}
+  mageMp: {fileID: 1221141883}
+  mageStrength: {fileID: 501042203}
+  mageMagic: {fileID: 1930379436}
+  mageDefense: {fileID: 219935065}
+  exp: {fileID: 777558549}
+  expMax: {fileID: 602155822}
 --- !u!82 &931291223
 AudioSource:
   m_ObjectHideFlags: 0
