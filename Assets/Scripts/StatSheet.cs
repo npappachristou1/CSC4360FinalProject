@@ -6,8 +6,6 @@ public class StatSheet
 {
     public string name;
     public int lvl;
-    public int exp;
-    public int expMax;
     public int hpMax;
     public int mpMax;
     public int strength;
@@ -17,8 +15,6 @@ public class StatSheet
     public StatSheet(string name, int hpMax, int mpMax, int strength, int magic, int defense){
         this.name = name;
         this.lvl = 1;
-        this.exp = 0;
-        this.expMax = 100;
         this.hpMax = hpMax;
         this.mpMax = mpMax;
         this.strength = strength;
@@ -30,11 +26,10 @@ public class StatSheet
     {
         int[] stats = {hpMax, mpMax, strength, magic, defense};
         for(int i = 0; i < stats.Length; i++){
-            stats[i] = (int) (stats[i] * 1.1f);
+            stats[i] = (int) (stats[i] * 1.15f);
         }
         lvl++;
-        exp = 0;
-        expMax = (int) (expMax * 1.2f);
+
     }
 
 }

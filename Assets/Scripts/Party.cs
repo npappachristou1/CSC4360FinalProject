@@ -7,7 +7,7 @@ public static class Party
     //format: name, hp, mp, strength, magic, defense
     public static StatSheet player1 = new StatSheet("warrior", 100, 30, 50, 20, 50);
     public static StatSheet player2 = new StatSheet("mage", 70, 100, 15, 80, 20);
-
+    public static int exp = 0, expMax = 100;
 
     //format: action name, character name, hp boost, mp cost, strength multiplier, magic multiplier, defense multiplier
     public static Actions[] allActions =
