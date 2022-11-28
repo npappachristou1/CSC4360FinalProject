@@ -41,16 +41,19 @@ public class ChangeScreens : MonoBehaviour
         } else if (tile.tag == "Town")
         {
             Debug.Log("Town entrance");
+            Location.overworldLocation = mainPlayer.origPos;
             changeScene(tile.tag);
         }
         else if (tile.tag == "Enemy Zone")
         {
             Debug.Log("Enemy Zone entrance");
+            Location.overworldLocation = mainPlayer.origPos;
             changeScene(tile.tag);
         }
         else if (tile.tag == "Boss Zone")
         {
             Debug.Log("Boss Zone entrance");
+            Location.overworldLocation = mainPlayer.origPos;
             changeScene(tile.tag);
         }
         else if (tile.tag == "Shop")
@@ -61,8 +64,12 @@ public class ChangeScreens : MonoBehaviour
         {
             Debug.Log("Chance of battle occuring");
 
-            int chance = Random.Range(0, 100);
-            if (chance <= 10){
+            Location.battleLocationName = locationName;
+            Location.battleLocationGrid = mainPlayer.targetPos;
+            Location.battleOn = true;
+
+            int chance = Random.Range(0, 10);
+            if (chance <= 4){
                 BattleInfo.zoneName = locationName;
                 BattleInfo.isBoss = false;
                 BattleInfo.enemiesTotal = 2;
@@ -71,6 +78,10 @@ public class ChangeScreens : MonoBehaviour
             }
             
         } else if (tile.tag == "BossBattle"){
+            Location.battleLocationName = locationName;
+            Location.battleLocationGrid = mainPlayer.origPos;
+            Location.battleOn = true;
+
             BattleInfo.zoneName = locationName;
             BattleInfo.isBoss = true;
             BattleInfo.enemiesTotal = 1;
@@ -84,5 +95,14 @@ public class ChangeScreens : MonoBehaviour
         Vector3 location = mainPlayer.targetPos;
         Debug.Log(Location.menuLocationName);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void startGame()
+    {
+        Location.overworldLocation = Vector3.zero;
+        Location.menuOn = false;
+        Location.menuOn = true;
+        Party.resetParty();
+        SceneManager.LoadScene("Overworld");
     }
 }

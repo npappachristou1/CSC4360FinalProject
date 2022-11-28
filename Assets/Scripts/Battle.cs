@@ -54,9 +54,9 @@ public class Battle : MonoBehaviour
         enemiesAlive = new bool[enemiesTotal];
         for (int i = 0; i < enemiesTotal; i++)
         {
-            enemyHp[i] = 250;
-            enemyHpMax[i] = 250;
-            enemyStrength[i] = 20;
+            enemyHp[i] = 400;
+            enemyHpMax[i] = 400;
+            enemyStrength[i] = 25;
             enemiesAlive[i] = true;
         }
 
@@ -132,6 +132,10 @@ public class Battle : MonoBehaviour
         }
 
         enemyHp[targetId] -= (attack1 + attack2);
+        if (enemyHp[targetId] < 0)
+        {
+            enemyHp[targetId] = 0;
+        }
 
         setUIStats();
         checkBattle();
@@ -170,10 +174,20 @@ public class Battle : MonoBehaviour
                 {
                     damage -= player1Defense;
                     player1Hp -= damage;
+
+                    if (player1Hp < 0)
+                    {
+                        player1Hp = 0;
+                    }
                 } else
                 {
                     damage -= player2Defense;
                     player2Hp -= damage;
+
+                    if (player2Hp < 0)
+                    {
+                        player2Hp = 0;
+                    }
                 }
             }
         }
@@ -225,13 +239,21 @@ public class Battle : MonoBehaviour
     void win()
     {
         Debug.Log("win");
-        SceneManager.LoadScene(zoneName);
+        if (isBoss)
+        {
+            SceneManager.LoadScene("Overworld");
+        } else
+        {
+            SceneManager.LoadScene(zoneName);
+            Party.expUp(20);
+        }
+        
     }
 
     void lose()
     {
         Debug.Log("lose");
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadScene("Start");
     }
 
     public void setPlayer1Action()
@@ -328,9 +350,9 @@ public class Battle : MonoBehaviour
         // updates enemy stats if needed
         if (isBoss)
         {
-            enemyHp[0] = 500;
-            enemyHpMax[0] = 500;
-            enemyStrength[0] = 35;
+            enemyHp[0] = 1000;
+            enemyHpMax[0] = 1000;
+            enemyStrength[0] = 40;
         }
 
         setUIStats();
