@@ -22,15 +22,5 @@ public class StatSheet
         this.defense = defense;
     }
 
-    public void lvlup()
-    {
-        int[] stats = {hpMax, mpMax, strength, magic, defense};
-        for(int i = 0; i < stats.Length; i++){
-            stats[i] = (int) (stats[i] * 1.15f);
-        }
-        lvl++;
-
-    }
-
 }
     

@@ -16,20 +16,23 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Location.menuOn){
-            Location.menuOn = false;
-            transform.position = Location.menuLocationGrid;
-            partyMember.transform.position = transform.position;
-        }  else if (Location.battleOn)
-        {
-            Location.battleOn = false;
-            transform.position = Location.battleLocationGrid;
-            partyMember.transform.position = transform.position;
-        } else if (gameObject.GetComponent<ChangeScreens>().locationName == "Overworld")
+        if (gameObject.GetComponent<ChangeScreens>().locationName == "Overworld")
         {
             transform.position = Location.overworldLocation;
             partyMember.transform.position = transform.position;
         }
+        if (Location.menuOn){
+            Location.menuOn = false;
+            transform.position = Location.menuLocationGrid;
+            partyMember.transform.position = transform.position;
+        }
+        if (Location.battleOn)
+        {
+            Location.battleOn = false;
+            transform.position = Location.battleLocationGrid;
+            partyMember.transform.position = transform.position;
+        }
+        
         origPos = transform.position;
         partyMemberScript = partyMember.GetComponent<followMovement>();
     }

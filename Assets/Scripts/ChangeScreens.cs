@@ -69,7 +69,7 @@ public class ChangeScreens : MonoBehaviour
             Location.battleOn = true;
 
             int chance = Random.Range(0, 10);
-            if (chance <= 2){
+            if (chance <= 4){
                 BattleInfo.zoneName = locationName;
                 BattleInfo.isBoss = false;
                 BattleInfo.enemiesTotal = 2;
