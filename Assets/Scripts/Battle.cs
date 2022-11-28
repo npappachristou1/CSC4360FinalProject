@@ -239,14 +239,21 @@ public class Battle : MonoBehaviour
     void win()
     {
         Debug.Log("win");
-        SceneManager.LoadScene(zoneName);
-        Party.expUp(20);
+        if (isBoss)
+        {
+            SceneManager.LoadScene("Overworld");
+        } else
+        {
+            SceneManager.LoadScene(zoneName);
+            Party.expUp(20);
+        }
+        
     }
 
     void lose()
     {
         Debug.Log("lose");
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadScene("Start");
     }
 
     public void setPlayer1Action()

@@ -48,4 +48,12 @@ public static class Party
             expMax = (int) (expMax * 1.15f);
         }
     }
+
+    public static void resetParty()
+    {
+        player1 = new StatSheet("warrior", 100, 30, 50, 20, 50);
+        player2 = new StatSheet("mage", 70, 100, 15, 50, 20);
+        exp = 0;
+        expMax = 100;
+    }
 }

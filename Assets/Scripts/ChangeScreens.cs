@@ -96,4 +96,13 @@ public class ChangeScreens : MonoBehaviour
         Debug.Log(Location.menuLocationName);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void startGame()
+    {
+        Location.overworldLocation = Vector3.zero;
+        Location.menuOn = false;
+        Location.menuOn = true;
+        Party.resetParty();
+        SceneManager.LoadScene("Overworld");
+    }
 }
